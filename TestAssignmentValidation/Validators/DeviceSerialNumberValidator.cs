@@ -3,7 +3,7 @@ using System;
 
 namespace TestAssignmentValidation.Validators
 {
-    internal class DeviceSerialNumberValidator : AbstractValidator<string>
+    public class DeviceSerialNumberValidator : AbstractValidator<string>
     {
         public DeviceSerialNumberValidator()
         {

@@ -2,7 +2,7 @@
 
 namespace TestAssignmentValidation.Validators
 {
-    internal class RnokppValidator : AbstractValidator<string>
+    public class RnokppValidator : AbstractValidator<string>
     {
         public RnokppValidator()
         {

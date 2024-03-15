@@ -3,7 +3,7 @@ using System;
 
 namespace TestAssignmentValidation.Validators
 {
-    internal class BirthDateValidator : AbstractValidator<string>
+    public class BirthDateValidator : AbstractValidator<string>
     {
         public BirthDateValidator()
         {
