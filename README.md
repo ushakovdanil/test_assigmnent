@@ -17,7 +17,7 @@ Each validator is implemented using the FluentValidation library, ensuring robus
 
 1. Clone the repository to your local machine.
 2. Open the solution in Visual Studio or your preferred IDE.
-3. Build the solution to compile the project.
+3. Build the solution to compile the project(In Release mode).
 4. Open a command prompt or terminal window.
 5. Navigate to the directory containing the compiled executable ("TestAssignmentDataValidation\TestAssignmentValidation\bin\Release\netcoreapp3.1").
 6. To validate a specific type of user data, use the following command format:             
