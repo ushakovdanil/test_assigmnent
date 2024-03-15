@@ -33,6 +33,7 @@ Each validator is implemented using the FluentValidation library, ensuring robus
 - C# (.NET Core)
 - Microsoft.Extensions.DependencyInjection
 - FluentValidation
+- Moq
 - XUnit
 
 ## Contributing
