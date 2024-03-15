@@ -31,6 +31,7 @@ Each validator is implemented using the FluentValidation library, ensuring robus
 ## Technologies Used
 
 - C# (.NET Core)
+- Microsoft.Extensions.DependencyInjection
 - FluentValidation
 - XUnit
 
