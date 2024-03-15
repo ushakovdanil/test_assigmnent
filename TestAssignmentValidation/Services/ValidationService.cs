@@ -1,62 +1,42 @@
-﻿using System;
+﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Xml;
 using TestAssignmentValidation.Models.Enum;
 using TestAssignmentValidation.Validators;
 
 namespace TestAssignmentValidation.Services
 {
-    public class ValidationService
+    public class ValidationService : IValidationService
     {
-        //Methods for validating specific user data.
-        private bool ValidatePassportId(string passportId)
+        private readonly IServiceProvider _serviceProvider;
+
+        public ValidationService(IServiceProvider serviceProvider)
         {
-            return new PassportValidator().Validate(passportId).IsValid;
+            _serviceProvider = serviceProvider;
         }
 
-        private bool ValidateRnokpp(string rnokpp)
+        public bool Validate(string dataType, string dataValue)
         {
-            return new RnokppValidator().Validate(rnokpp).IsValid;
+            var validator = GetValidator(dataType);
+            return validator?.Validate(dataValue).IsValid ?? false;
         }
 
-        private bool ValidateBirthDate(string birthDate)
+        private AbstractValidator<string> GetValidator(string dataType)
         {
-            return new BirthDateValidator().Validate(birthDate).IsValid;
-        }
-
-        private bool ValidateDeviceSerialNumber(string serialNumber)
-        {
-            return new DeviceSerialNumberValidator().Validate(serialNumber).IsValid;
-        }
-
-        //Use ValidateUserData for validate some data from user and return validation result to console and logic flow.
-        //In future you can modify this method for return specific model with result and error message.
-        public bool ValidateUserData(string dataName, string dataValue)
-        {
-            bool result = false;
-            switch(dataName)
+            switch (dataType)
             {
                 case nameof(UserDataType.Passport):
-                    result = ValidatePassportId(dataValue);
-                    break;
-
+                    return _serviceProvider.GetService<PassportValidator>();
                 case nameof(UserDataType.Rnokpp):
-                    result = ValidateRnokpp(dataValue);
-                    break;
-
+                    return _serviceProvider.GetService<RnokppValidator>();
                 case nameof(UserDataType.BirthDate):
-                    result = ValidateBirthDate(dataValue);
-                    break;
-
+                    return _serviceProvider.GetService<BirthDateValidator>();
                 case nameof(UserDataType.DeviceNumber):
-                    result = ValidateDeviceSerialNumber(dataValue);
-                    break;
-
+                    return _serviceProvider.GetService<DeviceSerialNumberValidator>();
                 default:
-                    break;
+                    throw new ArgumentException("Unknown data type", nameof(dataType));
             }
-
-            Console.WriteLine(result);
-            return result;
         }
     }
 }
