@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAssignmentValidation", "TestAssignmentValidation\TestAssignmentValidation.csproj", "{72E0D1FF-1F53-4B7E-863B-177549479E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationTests", "ValidationTests\ValidationTests.csproj", "{297D9EC2-CD7D-4FA9-9E3F-20A7C3C91BFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72E0D1FF-1F53-4B7E-863B-177549479E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E0D1FF-1F53-4B7E-863B-177549479E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E0D1FF-1F53-4B7E-863B-177549479E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E0D1FF-1F53-4B7E-863B-177549479E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{297D9EC2-CD7D-4FA9-9E3F-20A7C3C91BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{297D9EC2-CD7D-4FA9-9E3F-20A7C3C91BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{297D9EC2-CD7D-4FA9-9E3F-20A7C3C91BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{297D9EC2-CD7D-4FA9-9E3F-20A7C3C91BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13738F41-C297-4796-8852-9C81DD4246C9}
+	EndGlobalSection
+EndGlobal
